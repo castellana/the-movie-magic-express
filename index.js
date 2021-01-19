@@ -21,16 +21,21 @@ app.use(express.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
     axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&page=1`)
     .then(data => {
-            console.log("result data :" , JSON.stringify(data.data))
-            
-            res.render('index', {popularMovies: data.data.results})
+        // console.log("result data :" , JSON.stringify(data.data))
+        res.render('index', {popularMovies: data.data.results})
         }
     )
-    .catch(err => console.log('Something went wrong when getting axiosAPI'))
-    
+    .catch(err => console.log('Something went wrong when getting axiosAPI')) 
 })
 
 
+app.get('/movie-search', (req, res) => {
+    console.log("req movie-search: ", req.query.inputSearch) //nos aparece gran objeto, y, dentro de body otro objeto. 
+    //localhost:4444/movie-search?inputSearch=hola. Para ver lo que hay dentro, stringifiamos:
+
+
+
+} )
 
 app.use((req, res) => {
     res.status(404).render('404')
