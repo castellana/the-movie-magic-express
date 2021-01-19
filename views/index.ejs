@@ -1,0 +1,14 @@
+<%- include('./partials/head') %>
+<%- include('./partials/nav') %>
+
+<h1>Welcome to index</h1>
+
+<% popularMovies.forEach(movie => { %>
+    <article>
+        <!-- In order to generate a fully working image URL, you'll need 3 pieces of data. Those pieces are a base_url, a file_size and a file_path. -->
+        <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path%>" alt="">
+        <p><%=movie.title%></p>
+    </article>
+
+<% }) %>
+<%- include('./partials/footer') %>
