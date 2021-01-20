@@ -28,7 +28,7 @@ const movieSchema = new Schema({
     }, 
     popularity: { 
         type: 'Number', 
-        required: true
+        required: false
     },
     poster_path: { 
         type: 'String', 
@@ -40,7 +40,7 @@ const movieSchema = new Schema({
     },
     vote_average: { 
         type: 'Number', 
-        required: true
+        required: false
     },
     vote_count: { 
         type: 'Number', 
@@ -48,9 +48,9 @@ const movieSchema = new Schema({
     },
     genre_ids: { 
         type: 'Array',
-        required: true
+        required: false
     }
-})
+}, {timestamps: true})
 
 
 

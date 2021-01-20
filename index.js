@@ -69,7 +69,37 @@ app.get('/details/:id', (req, res) => {
 })
 
 
-
+app.get('/add-fav/:id', (req, res) => {
+    // console.log("req :", req); //sólo con esto no recibimos los datos de la película. Debemos conectarnos otra vez al axios??????:
+    // res.end()
+    axios.get(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${process.env.API_KEY}&language=en-US`)
+        .then(data => {
+            
+            // console.log("data :", data);
+            //console.log(data.data) //me da los datos de la película
+            console.log('req.data.data :', data.data)
+            const newFav = new MovieItem ({
+                id: data.data.id,
+                backdrop_path: data.data.backdrop_path, 
+                original_language: data.data.original_language,
+                title: data.data.title,
+                original_title: data.data.original_title,
+                popularity: data.data.popularity,
+                poster_path: data.data.poster_path,
+                release_date: data.data.release_date,
+                overview: data.data.overview,
+                genres_ids: data.data.genres,
+                vote_average: data.data.vote_average,
+                vote_count: data.data.vote_count
+            })
+            newFav.save()
+            .then(result => {
+                // res.send(result)
+                res.redirect('/')
+            })
+        })
+        .catch(err => console.log(err))
+})
 
 
 

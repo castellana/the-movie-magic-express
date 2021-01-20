@@ -2,12 +2,14 @@
 <%- include('./partials/nav') %>
 
 <h1>Welcome to index</h1>
-<section id="popular-movies">
+<section id="popularSec">
     <% popularMovies.forEach(movie => { %>
         <article>
             <!-- In order to generate a fully working image URL, you'll need 3 pieces of data. Those pieces are a base_url, a file_size and a file_path. -->
-            <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path%>" alt="">
-            <p><%=movie.title%></p>
+            <a href="/details/<%= movie.id %>">
+                <img class="grid-img" src="https://image.tmdb.org/t/p/w500<%= movie.poster_path%>" alt="">
+                <h3><%=movie.title%></h3>
+            </a>
         </article>
     <% }) %>
 </section>
