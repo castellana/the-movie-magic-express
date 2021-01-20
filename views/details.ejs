@@ -3,7 +3,7 @@
 
 <section id="detailsSec">
     <article>
-        <img class="cover-img" src="https://image.tmdb.org/t/p/w500<%= movieDetailsData.poster_path%>" alt="">
+        <img class="cover-img" src="https://image.tmdb.org/t/p/w500<%= movieDetailsData.backdrop_path == undefined ? movieDetailsData.poster_path : movieDetailsData.backdrop_path%>" alt="">
         <div>
             <span><%=movieDetailsData.vote_average%>/10</span>
             <span><%=movieDetailsData.vote_count%></span>

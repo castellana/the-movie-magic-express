@@ -1,0 +1,17 @@
+<%- include('./partials/head') %>
+<%- include('./partials/nav') %>
+
+<h2 class="page-h2">My Favourite Movies</h2>
+<section id="mymoviesSec">
+    <% favouritesData.forEach(movie => { %>
+        <article>
+            <a href="/details/<%=movie.id%>">
+                <img class="grid-img" src="https://image.tmdb.org/t/p/w500<%= movie.poster_path%>" alt="">
+                <h3><%=movie.title%></h3>
+                <p><%=movie.overview%></p>
+                <p><%=movie.release_date%></p>
+            </a>
+        </article>
+    <% }) %>
+</section>
+<%- include('./partials/footer') %>

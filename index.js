@@ -80,7 +80,7 @@ app.get('/add-fav/:id', (req, res) => {
             console.log('req.data.data :', data.data)
             const newFav = new MovieItem ({
                 id: data.data.id,
-                backdrop_path: data.data.backdrop_path, 
+                backdrop_path: data.data.backdrop_path == undefined ? data.data.poster_path : data.data.backdrop_path, 
                 original_language: data.data.original_language,
                 title: data.data.title,
                 original_title: data.data.original_title,
@@ -95,13 +95,17 @@ app.get('/add-fav/:id', (req, res) => {
             newFav.save()
             .then(result => {
                 // res.send(result)
-                res.redirect('/')
+                res.redirect('/mymovies')
             })
         })
         .catch(err => console.log(err))
 })
 
-
+app.get('/mymovies', (req, res) => {
+    MovieItem.find()
+        .then(result => res.render('mymovies', {favouritesData: result}))
+        .catch(err => console.log(err))
+})
 
 
 
