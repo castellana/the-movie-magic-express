@@ -1,0 +1,31 @@
+<%- include('./partials/head') %>
+<%- include('./partials/nav') %>
+
+<section id="favitemSec">
+    <article>
+        <img class="cover-img" src="https://image.tmdb.org/t/p/w500<%=favDetailsData.poster_path%>" alt="">
+        <div>
+            <span><%=favDetailsData.vote_average%>/10</span>
+            <span><%=favDetailsData.vote_count%></span>
+        </div>
+
+        <section id="details-wrapper">
+            <a href="/favitem/<%=favDetailsData.id%>/delete">Delete from favourites</a>
+
+            <div>
+                <h3><%=favDetailsData.title%></h3>
+                <p><%=favDetailsData.release_date%> Released</p>
+            </div>
+            <div>
+                <!-- <ul>
+                <%#favDetailsData.genres.forEach(genre %> 
+                    <li><%# genre.name%></li>
+                    <%# }) %>
+                </ul> -->
+            </div>
+            <p><%=favDetailsData.overview%></p>
+        </section>
+    </article>
+</section>
+
+<%- include('./partials/footer') %>

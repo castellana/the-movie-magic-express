@@ -5,7 +5,7 @@
 <section id="mymoviesSec">
     <% favouritesData.forEach(movie => { %>
         <article>
-            <a href="/details/<%=movie.id%>">
+            <a href="/favitem/<%=movie.id%>">
                 <img class="grid-img" src="https://image.tmdb.org/t/p/w500<%= movie.poster_path%>" alt="">
                 <h3><%=movie.title%></h3>
                 <p><%=movie.overview%></p>

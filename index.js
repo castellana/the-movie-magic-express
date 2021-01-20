@@ -108,6 +108,27 @@ app.get('/mymovies', (req, res) => {
 })
 
 
+app.get('/favitem/:id', (req, res) => {
+    // console.log("favitem/:id :", req); //de aquí no recibimos nada que podamos usar
+    MovieItem.find({"id": req.params.id})
+        .then(result => {
+            // console.log("resultado :", result);
+            res.render('favitem', {favDetailsData: result[0] })
+        })
+        .catch(err => console.log(err))
+        })
+
+
+app.get('/favitem/:id/delete', (req, res) => {
+    // console.log("favitem/:id :", req); //de aquí no recibimos nada que podamos usar
+    MovieItem.findByIdAndDelete(req.params.id)
+        .then(result => {
+            console.log('movie has been removed from your favourite list');
+            res.redirect('/mymovies')
+        })
+            .catch(err => console.log(err))
+        
+});
 
 app.use((req, res) => {
     res.status(404).render('404')
