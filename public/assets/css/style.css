@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background: #4F4F4F;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+#popular-movies, #movies-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3%;
+}

@@ -1,0 +1,16 @@
+<%- include('./partials/head') %>
+<%- include('./partials/nav') %>
+
+<section id="movies-results">
+    <% moviesResults.forEach(movie => { %>
+        <article>
+            <a href="/details/<%=movie.id%>">
+                <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path%>" alt="">
+                <p><%=movie.title%></p>
+                <p><%=movie.overview%></p>
+                <p><%=movie.release_date%></p>
+            </a>
+        </article>
+    <% }) %>
+</section>
+<%- include('./partials/footer') %>

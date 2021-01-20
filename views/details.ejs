@@ -1,0 +1,29 @@
+<%- include('./partials/head') %>
+<%- include('./partials/nav') %>
+
+<section id="movies-results">
+        <article>
+
+            <img src="https://image.tmdb.org/t/p/w500<%= movieDetailsData.poster_path%>" alt="">
+            <div>
+                <span><%=movieDetailsData.vote_average%>/10</span>
+                <span><%=movieDetailsData.vote_count%></span>
+            </div>
+            <a href="">Add to favorite</a>
+            <div>
+                <h3><%=movieDetailsData.title%></h3>
+                <p><%=movieDetailsData.release_date%> Released</p>
+            </div>
+            <div>
+                <ul>
+                <% movieDetailsData.genres.forEach(genre => { %> 
+                    <li><%= genre.name%></li>
+                    <% }) %>
+                </ul>
+            </div>
+            <p><%=movieDetailsData.overview%></p>
+            
+        </article>
+
+</section>
+<%- include('./partials/footer') %>
