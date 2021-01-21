@@ -53,8 +53,5 @@ const movieSchema = new Schema({
 }, {timestamps: true})
 
 
-
-
-//wir müssen nun das Model in einem Schema verwandeln:
 const MovieItem = mongoose.model('movieDb', movieSchema)
 module.exports = MovieItem
