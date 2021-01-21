@@ -10,18 +10,18 @@
         </div>
 
         <section id="details-wrapper">
-            <a href="/favitem/<%=favDetailsData.id%>/delete">Delete from favourites</a>
+            <a href="/favitem/<%=favDetailsData._id%>/delete">Delete from favourites</a>
 
             <div>
                 <h3><%=favDetailsData.title%></h3>
                 <p><%=favDetailsData.release_date%> Released</p>
             </div>
             <div>
-                <!-- <ul>
-                <%#favDetailsData.genres.forEach(genre %> 
-                    <li><%# genre.name%></li>
-                    <%# }) %>
-                </ul> -->
+                <ul>
+                <% favDetailsData.genre_ids.forEach(genre =>{ %> 
+                    <li><%= genre.name%></li>
+                    <% }) %>
+                </ul>
             </div>
             <p><%=favDetailsData.overview%></p>
         </section>

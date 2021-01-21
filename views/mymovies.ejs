@@ -1,8 +1,9 @@
 <%- include('./partials/head') %>
 <%- include('./partials/nav') %>
 
-<h2 class="page-h2">My Favourite Movies</h2>
 <section id="mymoviesSec">
+<h2 class="page-h2">My Favourite Movies</h2>
+<section class="gridSec">
     <% favouritesData.forEach(movie => { %>
         <article>
             <a href="/favitem/<%=movie.id%>">
@@ -13,5 +14,6 @@
             </a>
         </article>
     <% }) %>
+</section>
 </section>
 <%- include('./partials/footer') %>

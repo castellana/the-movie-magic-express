@@ -2,6 +2,7 @@
 <%- include('./partials/nav') %>
 
 <section id="resultsSec">
+<section class="gridSec">
     <% moviesResults.forEach(movie => { %>
         <article>
             <a href="/details/<%=movie.id%>">
@@ -12,5 +13,6 @@
             </a>
         </article>
     <% }) %>
+</section>
 </section>
 <%- include('./partials/footer') %>

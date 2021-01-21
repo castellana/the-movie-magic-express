@@ -1,17 +1,20 @@
 <%- include('./partials/head') %>
 <%- include('./partials/nav') %>
 
-<h1>Welcome to index</h1>
 <section id="popularSec">
-    <% popularMovies.forEach(movie => { %>
-        <article>
-            <!-- In order to generate a fully working image URL, you'll need 3 pieces of data. Those pieces are a base_url, a file_size and a file_path. -->
-            <a href="/details/<%= movie.id %>">
-                <img class="grid-img" src="https://image.tmdb.org/t/p/w500<%= movie.poster_path%>" alt="">
-                <h3><%=movie.title%></h3>
-            </a>
-        </article>
-    <% }) %>
+    <h1>Welcome to the Movie Magic App</h1>
+    <h2 class="page-h2">Popular Movies</h2>
+    <section class="gridSec">
+        <% popularMovies.forEach(movie => { %>
+            <article>
+                <!-- In order to generate a fully working image URL, you'll need 3 pieces of data. Those pieces are a base_url, a file_size and a file_path. -->
+                <a href="/details/<%= movie.id %>">
+                    <img class="grid-img" src="https://image.tmdb.org/t/p/w500<%= movie.poster_path%>" alt="">
+                    <h3><%=movie.title%></h3>
+                </a>
+            </article>
+        <% }) %>
+    </section>
 </section>
 
 <%- include('./partials/footer') %>
