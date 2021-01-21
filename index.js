@@ -21,12 +21,12 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))    
 
 
-
+// https://medium.com/@ryanfarney/the-moviedb-data-pagination-a48a040f1e90
 
 app.get('/', (req, res) => {
     axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&page=1`)
     .then(data => {
-        // console.log("result data :" , JSON.stringify(data.data))
+        console.log("result data :" , JSON.stringify(data.data))
         res.render('index', {popularMovies: data.data.results})
         }
     )
@@ -113,7 +113,7 @@ app.get('/favitem/:id', (req, res) => {
     MovieItem.find({"id": req.params.id})
         .then(result => {
             console.log("resultado :", result);
-            // console.log(JSON.stringify(result[0].genre_ids));
+            console.log(JSON.stringify(result.genre_ids));
             res.render('favitem', {favDetailsData: result[0] })
         })
         .catch(err => console.log(err))
