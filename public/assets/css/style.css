@@ -108,15 +108,15 @@ article:hover {
 
 
 /**** Details page ****/
-#detailsSec {
+#detailsSec, #favitemSec {
     width: 90%;
     margin: 0 auto;
 }
-#details-wrapper {
+.details-wrapper {
     width: 70%;
 }
 
-#evaluation {
+.evaluation {
     text-align: right;
 }
 

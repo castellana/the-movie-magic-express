@@ -4,12 +4,12 @@
 <section id="detailsSec">
     <article>
         <img class="cover-img" src="https://image.tmdb.org/t/p/w500<%= movieDetailsData.backdrop_path == undefined ? movieDetailsData.poster_path : movieDetailsData.backdrop_path%>" alt="">
-        <div id="evaluation">
+        <div class="evaluation">
             <span><%=movieDetailsData.vote_average%>/10</span>
             <span><%=movieDetailsData.vote_count%></span>
         </div>
 
-        <section id="details-wrapper">
+        <section class="details-wrapper">
             <a href="/add-fav/<%=movieDetailsData.id%>">Add to favorite</a>
 
             <div>
