@@ -4,7 +4,7 @@
 <section id="detailsSec">
     <article>
         <img class="cover-img" src="https://image.tmdb.org/t/p/w500<%= movieDetailsData.backdrop_path == undefined ? movieDetailsData.poster_path : movieDetailsData.backdrop_path%>" alt="">
-        <div>
+        <div id="evaluation">
             <span><%=movieDetailsData.vote_average%>/10</span>
             <span><%=movieDetailsData.vote_count%></span>
         </div>
@@ -13,16 +13,17 @@
             <a href="/add-fav/<%=movieDetailsData.id%>">Add to favorite</a>
 
             <div>
-                <h3><%=movieDetailsData.title%></h3>
+                <h3 class="details-h3"><%=movieDetailsData.title%></h3>
                 <p><%=movieDetailsData.release_date%> Released</p>
             </div>
             <div>
-                <ul>
+                <ul class="genres-list">
                 <% movieDetailsData.genres.forEach(genre => { %> 
                     <li><%= genre.name%></li>
                     <% }) %>
                 </ul>
             </div>
+            <h4>Plot Summary</h4>
             <p><%=movieDetailsData.overview%></p>
         </section>
     </article>
