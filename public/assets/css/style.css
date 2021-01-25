@@ -219,3 +219,81 @@ article:hover {
     padding: 2vh 0;
 }
 
+@media only screen and (max-width: 767.98px) {
+    nav {
+        flex-direction: column;
+        height: unset;
+    }
+    form {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    input[type=search] {
+        width: unset;
+        height: unset;
+    }
+    input[type=submit] {
+        width: unset;
+        height: unset;
+    }
+    h1 {
+        font-size: 1.15rem;
+        margin: 0 auto;
+    }
+    .page-h2 {
+        font-size: 1.4rem;
+        padding: 2vh 0;
+    }
+    .gridSec {
+        display: unset;
+    }
+    .grid-img {
+        height: unset;
+    }
+    .gridSec article {
+        padding-bottom: 4vh;
+    }
+    .gridSec h3 {
+        text-align: center;
+        font-weight: 600;
+    }
+    .gridSec p {
+        padding: 2vh 0;
+    }
+    .evaluation {
+        width: 20%;
+        margin-top: -10vh;
+        margin-left: 70%;
+    }
+    .evaluation img {
+        width: 50%;
+    }
+    .evaluation h4{
+        padding: unset;
+    }
+    .evaluation p {
+        font-size: .7rem;
+    }
+    .details-wrapper {
+        width: 100%;
+    }
+    .addTo {
+        padding-top: 2vh;
+        width: 90%;
+    }
+    .addTo img {
+        width: 90%;
+    }
+    .addTo h3 {
+        font-size: 1.2rem;
+    }
+    .details-h3 {
+        font-size: 1.5rem;
+    }
+    .details-wrapper h4 {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}

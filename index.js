@@ -85,7 +85,12 @@ app.get('/add-fav/:id', (req, res) => {
     axios.get(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${process.env.API_KEY}&language=en-US`)
         .then(data => {
             //console.log(data.data) //me da los datos de la película
-            console.log('req.data.data :', data.data)
+            console.log('req.data.data :', data.data) //objeto con todos los datos de la pelicula
+            const movieToAdd = data.data
+            MovieItem.find({"id": "data.id"}).then(movie => {
+                console.log("movie :", movie);
+                console.log("data.id:", data.id);
+            })
             const newFav = new MovieItem ({
                 id: data.data.id,
                 backdrop_path: data.data.backdrop_path == undefined ? data.data.poster_path : data.data.backdrop_path, 
