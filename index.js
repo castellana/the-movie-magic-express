@@ -22,25 +22,50 @@ app.use(express.urlencoded({ extended: true }))
 
 
 app.get('/', (req, res) => {
-    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&page=1`)
+    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
+
     .then(data => {
-        console.log("result data :" , JSON.stringify(data.data))
-        res.render('index', {popularMovies: data.data.results})
+        // console.log("result data :" , JSON.stringify(data.data))
+        const popularMovies = data.data.results
+        const page = data.data.page
+        res.render('index', {popularMovies, page})
         })
     .catch(err => console.log('Something went wrong when getting axiosAPI')) 
 })
+
+// app.get('/popular/:page', (req, res) => {
+//     // console.log('popular/:page req : ', req.params.page)
+//     axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}?page=${req.params.page}`)
+
+//     .then(data => {
+//         const popularMovies = data.data.results
+//         const page = data.data.page
+//         const nextPage = req.params.page
+//         res.render('popular', {popularMovies, page, nextPage})
+//         })
+//     .catch(err => console.log('Something went wrong when getting axiosAPI')) 
+// })
 
 
 app.get('/movie-search', (req, res, next) => {
     // console.log('prueb miercoles req.query.inputSearch: ', req.query.inputSearch) 
     axios.get(`https://api.themoviedb.org/3/search/multi?api_key=${process.env.API_KEY}&language=en-US&query=${req.query.inputSearch}&page=1&include_adult=false`)
         .then(data => {
+            console.log("data :", data);
             // console.log(data.data);
+            // console.log("data.data.page :", data.data.page);
+            
+            const inputSearch = req.query.inputSearch
             const moviesResults = data.data.results
-            res.render('results', {moviesResults})
+            const page = data.data.page
+            const totalPages = data.data.total_pages
+            res.render('results', {moviesResults, page, totalPages, inputSearch})
             })
         .catch(err => console.log('Something went wrong when getting axiosAPI')) 
 } )
+
+
+
 
 
 app.get('/details/:id', (req, res) => {

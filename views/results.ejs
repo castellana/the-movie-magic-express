@@ -2,17 +2,22 @@
 <%- include('./partials/nav') %>
 
 <section id="resultsSec">
-<section class="gridSec">
-    <% moviesResults.forEach(movie => { %>
-        <article>
-            <a href="/details/<%=movie.id%>">
-                <img class="grid-img" src="https://image.tmdb.org/t/p/w500<%= movie.poster_path%>" alt="">
-                <h3><%=movie.title%></h3>
-                <p><%=movie.overview%></p>
-                <p><%=movie.release_date%></p>
-            </a>
-        </article>
-    <% }) %>
-</section>
+    <section class="gridSec">
+        <% moviesResults.forEach(movie => { %>
+            <article>
+                <a href="/details/<%=movie.id%>">
+                    <img class="grid-img" src="https://image.tmdb.org/t/p/w500<%= movie.poster_path%>" alt="">
+                    <h3><%=movie.title%></h3>
+                    <p><%=movie.overview%></p>
+                    <p><%=movie.release_date%></p>
+                </a>
+            </article>
+        <% }) %>
+    </section>
+
+ 
+    <a href="/movie-search?inputSearch=<%=inputSearch %>/<%=page-1%>">Previews page</a>
+
+    <a href="/movie-search?inputSearch=<%=inputSearch %>/<%=page+1%>">Next page</a>
 </section>
 <%- include('./partials/footer') %>
