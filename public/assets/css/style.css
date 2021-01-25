@@ -38,6 +38,10 @@ input[type=search] {
     margin-right: 2%;
     border: none;
     background: #333333;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0 4%;
+    font-weight: 300;
 }
 
 input[type=submit] {
@@ -87,6 +91,43 @@ article:hover {
     font-size: 1.5rem;
     font-weight: 300;
 }
+/* .more {
+    margin:20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+ 
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+} */
+.more{
+    text-overflow: ellipsis;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    
+    max-width: 90%;
+    position: relative;
+    padding: 1rem;
+    padding-right: 110px;
+    font-size: 1rem;
+    line-height: 3rem;
+}
+
+.more::before{
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+    line-height: 1.5rem;
+    width: 100px;
+    color: cornflowerblue;
+    text-decoration: underline;
+    content: 'Read More';
+    cursor: pointer;
+}
+
+
+
 
 /**** Details page ****/
 .cover-img {
@@ -94,6 +135,43 @@ article:hover {
     height: 45vh;
     object-fit: cover;
     border-bottom-left-radius: 30px;
+    position: relative;
+}
+
+.addTo {
+    display: flex;
+    align-items: center;
+    padding-bottom: 3vh;
+}
+
+.addTo a {
+    padding-right: 5%;
+}
+.evaluation {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    background: #fff;
+    border-radius: 50px 0 0 50px;
+    align-items: center;
+    color: #000;
+    position: absolute;
+    margin-top: -7vh;
+    margin-left: 80%;
+}
+
+.evaluation h4 {
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding: 1vh 0;
+}
+
+.evaluation h4 span {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.evaluation p {
+    font-size: 1.2rem;
 }
 
 /**** mymovies page ****/
@@ -140,3 +218,4 @@ article:hover {
     font-size: 1.5rem;
     padding: 2vh 0;
 }
+

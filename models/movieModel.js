@@ -35,7 +35,7 @@ const movieSchema = new Schema({
         required: true
     }, 
     release_date: { 
-        type: 'Date', 
+        type: 'String', 
         required: true
     },
     vote_average: { 
@@ -48,7 +48,7 @@ const movieSchema = new Schema({
     },
     genre_ids: { 
         type: 'Array',
-        required: false
+        required: true
     }
 }, {timestamps: true})
 

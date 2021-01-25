@@ -8,9 +8,11 @@
                 <a href="/details/<%=movie.id%>">
                     <img class="grid-img" src="https://image.tmdb.org/t/p/w500<%= movie.poster_path%>" alt="">
                     <h3><%=movie.title%></h3>
-                    <p><%=movie.overview%></p>
+   
+                    <p class="more"><%=movie.overview%></p>
                     <p><%=movie.release_date%></p>
                 </a>
+                
             </article>
         <% }) %>
     </section>

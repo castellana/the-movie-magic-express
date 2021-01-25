@@ -5,19 +5,23 @@
     <article>
         <img class="cover-img" src="https://image.tmdb.org/t/p/w500<%=favDetailsData.poster_path%>" alt="">
         <div class="evaluation">
-            <span><%=favDetailsData.vote_average%>/10</span>
-            <span><%=favDetailsData.vote_count%></span>
+            <img src="/assets/img/star.png" alt="">
+            <h4><%=favDetailsData.vote_average%><span>/10</span></h4>
+            <p><%=favDetailsData.vote_count%></p>
         </div>
 
         <section class="details-wrapper">
-            <a href="/favitem/<%=favDetailsData._id%>/delete">Delete from favourites</a>
+            <section class="addTo">
+                <a href="/favitem/<%=favDetailsData._id%>/delete"><img src="/assets/img/minus.png" alt=""></a>
 
+                <h3 class="details-h3">Delete from favorites</h3> 
+            </section>
             <div>
                 <h3 class="details-h3"><%=favDetailsData.title%></h3>
                 <p><%=favDetailsData.release_date%> Released</p>
             </div>
             <div>
-                <ul>
+                <ul class="genres-list">
                 <% favDetailsData.genre_ids.forEach(genre =>{ %> 
                     <li><%= genre.name%></li>
                     <% }) %>

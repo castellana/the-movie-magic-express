@@ -119,8 +119,9 @@ app.get('/favitem/:id', (req, res) => {
     MovieItem.find({"id": req.params.id})
         .then(result => {
             console.log("resultado :", result);
-            console.log(JSON.stringify(result.genre_ids));
-            res.render('favitem', {favDetailsData: result[0] })
+            console.log("json.stringigly de result.genre_ids: ", JSON.stringify(result[0].genre_ids));
+            
+            res.render('favitem', {favDetailsData: result[0]})
         })
         .catch(err => console.log(err))
         })
