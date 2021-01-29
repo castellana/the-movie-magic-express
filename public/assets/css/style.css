@@ -29,8 +29,12 @@ nav a {
 }
 
 form {
-    width: 40%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 input[type=search] {
     width: 400px;
     border-radius: 50px;
@@ -38,7 +42,7 @@ input[type=search] {
     margin-right: 2%;
     border: none;
     background: #333333;
-    color: #fff;
+    color: inherit;
     font-size: 1.5rem;
     padding: 0 4%;
     font-weight: 300;
@@ -226,9 +230,6 @@ article:hover {
     }
     form {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
     input[type=search] {
         width: unset;

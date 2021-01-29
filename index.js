@@ -101,7 +101,7 @@ app.get('/add-fav/:id', (req, res) => {
                 poster_path: data.data.poster_path,
                 release_date: data.data.release_date,
                 overview: data.data.overview,
-                genres_ids: data.data.genres,
+                genres: data.data.genres,
                 vote_average: data.data.vote_average,
                 vote_count: data.data.vote_count
             })

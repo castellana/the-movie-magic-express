@@ -22,8 +22,8 @@
             </div>
             <div>
                 <ul class="genres-list">
-                <% favDetailsData.genre_ids.forEach(genre =>{ %> 
-                    <li><%= genre.name%></li>
+                <% favDetailsData.genres.forEach(genre =>{ %> 
+                    <li><%= genre[0].name%></li>
                     <% }) %>
                 </ul>
             </div>

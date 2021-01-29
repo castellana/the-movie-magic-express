@@ -46,7 +46,7 @@ const movieSchema = new Schema({
         type: 'Number', 
         required: true
     },
-    genre_ids: { 
+    genres: { 
         type: 'Array',
         required: true
     }
